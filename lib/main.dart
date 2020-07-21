@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:theme_i18n_provider/src/theme/app_theme.dart';
 import 'package:theme_provider/theme_provider.dart';
 
 import 'src/pages/home_page.dart';
@@ -35,8 +36,16 @@ class MyApp extends StatelessWidget {
         }
       },
       themes: <AppTheme>[
-        AppTheme.light(id: 'light'),
-        AppTheme.dark(id: 'dark'),
+        AppTheme.light().copyWith(
+          id: 'light',
+          data: AppThemeData.lightTheme,
+          description: 'custom light theme',
+        ),
+        AppTheme.dark().copyWith(
+          id: 'dark',
+          data: AppThemeData.darkTheme,
+          description: 'custom dark theme',
+        ),
       ],
       child: ThemeConsumer(
         child: Builder(

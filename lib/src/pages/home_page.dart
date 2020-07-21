@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theme_provider/theme_provider.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,9 +19,9 @@ class _HomePageState extends State<HomePage> {
         children: [
           Center(
             child: Text(
-              'Hello!',
+              'darkmode',
               textAlign: TextAlign.center,
-            ),
+            ).tr(),
           ),
         ],
       ),

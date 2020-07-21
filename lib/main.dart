@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:theme_i18n_provider/src/theme/app_theme.dart';
@@ -6,7 +7,18 @@ import 'package:theme_provider/theme_provider.dart';
 import 'src/pages/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    EasyLocalization(
+      supportedLocales: [
+        Locale('en'),
+        Locale('es'),
+        Locale('pt'),
+      ],
+      path: 'assets/translations',
+      fallbackLocale: Locale('en'),
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
